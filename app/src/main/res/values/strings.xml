@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Style-Transfer</string>
+    <string name="app_name">Artifex</string>
     <string name="button">Capture</string>
+    <string name="todo">TODO</string>
 </resources>

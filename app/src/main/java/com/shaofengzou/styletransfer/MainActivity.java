@@ -111,7 +111,13 @@ public class MainActivity extends AppCompatActivity {
                 style_pos = position;
                 Log.e(TAG, String.valueOf(style_pos));
                 Toast.makeText(MainActivity.this, "You have chosen style:" + pu_list[style_pos], Toast.LENGTH_SHORT).show();
-                if (style_pos > 8) {
+                if (style_pos == 1) {
+                    INPUT_NODE = "X_inputs";
+                    OUTPUT_NODE = "output";
+                    width = 512;
+                    height = 512;
+                }
+                else if (style_pos > 8) {
                     INPUT_NODE = "X_inputs";
                     OUTPUT_NODE = "output";
                     width = 512;
@@ -368,7 +374,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Different pb file require different input tensor size
         // The model trained by myself such as wave_my.pb require 1*512*512*3 input format
-        if (style_pos > 8) {
+        if (style_pos == 1) {
             // Copy the input data into TensorFlow
             inferenceInterface.feed(INPUT_NODE, floatValues, 1, height, width, 3);
         } else {
